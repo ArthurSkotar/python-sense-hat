@@ -716,8 +716,8 @@ class SenseHat(object):
         self._init_imu()  # Ensure imu is initialised
 
         attempts = 0
-        success = False
 
+        success = self._imu.IMURead()
         while not success and attempts < 3:
             success = self._imu.IMURead()
             attempts += 1
