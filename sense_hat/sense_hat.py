@@ -713,7 +713,7 @@ class SenseHat(object):
         Internal. Tries to read the IMU sensor three times before giving up
         """
 
-        # self._init_imu()  # Ensure imu is initialised
+        self._init_imu()  # Ensure imu is initialised
 
         attempts = 0
 
@@ -721,7 +721,7 @@ class SenseHat(object):
         while not success and attempts < 3:
             success = self._imu.IMURead()
             attempts += 1
-            time.sleep(self._imu_poll_interval)
+            #time.sleep(self._imu_poll_interval)
 
         return success
 
